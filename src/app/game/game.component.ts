@@ -25,7 +25,6 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     this.newGame();
-
     console.log(this.game.stack);
   }
 
@@ -47,15 +46,21 @@ export class GameComponent implements OnInit {
         this.pickCardAnimation = false;
       }, 1500);
     }
+    this.game.currentPlayer++
+    this.game.currentPlayer = this.game.currentPlayer % this.game.players.length;
+    console.log(this.game.currentPlayer);
   }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe(name => {
-      this.game.players.push(name);
+      if(name && name.length > 0) {
+        this.game.players.push(name);
+      }
     });
   }
 
+  
 }
 

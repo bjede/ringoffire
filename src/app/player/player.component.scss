@@ -6,11 +6,15 @@
     padding: 5px 10px;
 
     img {
-        width: 80px;
+        width: 50px;
         border-radius: 100%;
     }
 
     span {
         padding-left: 20px;
     }
+}
+
+.player-active {
+    background-color: red !important;
 }

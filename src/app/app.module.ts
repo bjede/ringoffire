@@ -15,7 +15,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { DialogAddPlayerComponent } from './dialog-add-player/dialog-add-player.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input'; 
+import {MatInputModule} from '@angular/material/input';
+import { GameInfoComponent } from './game-info/game-info.component';
+import {MatCardModule} from '@angular/material/card'; 
 
 
 
@@ -25,7 +27,8 @@ import {MatInputModule} from '@angular/material/input';
     StartScreenComponent,
     GameComponent,
     PlayerComponent,
-    DialogAddPlayerComponent
+    DialogAddPlayerComponent,
+    GameInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatDialogModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
