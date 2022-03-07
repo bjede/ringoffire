@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/models/game';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 export interface DialogData {
   name: string;
@@ -21,15 +22,22 @@ export class GameComponent implements OnInit {
 
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.newGame();
+    this.firestore.collection('games')
+    .valueChanges().subscribe((game) => {
+      console.log(game);
+    });
     console.log(this.game.stack);
   }
 
   newGame() {
     this.game = new Game();
+    this.firestore
+    .collection('games')
+    .add({'Card': this.currentCard});
     console.log(this.game);
   }
 
