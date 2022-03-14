@@ -95,7 +95,6 @@ export class GameComponent implements OnInit {
       .collection('games')
       .doc(this.gameId)
       .update(this.game.toJson());
-
   }
 
 
