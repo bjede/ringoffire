@@ -1,0 +1,38 @@
+.profile-pictures {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    background-color: rgb(209, 209, 209);
+    border-radius: 100%;
+    padding: 8px;
+    margin: 8px;
+    cursor: pointer;
+
+    &:hover {
+        filter: brightness(1.15);
+    }
+}
+
+.profile-pictures:nth-child(1) {
+    margin-left: 420px;
+
+    @media (max-width: 425px) {
+        margin-left: 540px;
+    }
+
+    @media (max-width: 370px) {
+        margin-left: 570px;
+    }
+}
+
+.edit-player-container {
+    width: 100%;
+}
+
+.edit-player-container-inner {
+    display: flex;
+    justify-content: center;
+    overflow-x: scroll;
+    padding: 5px 10px;
+    width: 100%;
+}
