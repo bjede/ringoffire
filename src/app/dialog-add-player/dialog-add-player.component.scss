@@ -1,0 +1,22 @@
+.profile-pictures {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    border-radius: 100%;
+    padding: 5px;
+    background-color: rgb(223, 223, 223);
+}
+
+[id^="mat-option-"] {
+    line-height: unset !important;
+    height: unset !important;
+    padding: 10px 16px !important;
+    .select-item {
+        display: flex !important;
+        align-items: center !important;
+
+        img{
+            margin-right: 10px;
+        }
+    }
+}
