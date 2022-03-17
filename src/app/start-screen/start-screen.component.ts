@@ -8,6 +8,7 @@ import { Game } from 'src/models/game';
   templateUrl: './start-screen.component.html',
   styleUrls: ['./start-screen.component.scss']
 })
+
 export class StartScreenComponent implements OnInit {
 
   game = new Game();
@@ -23,9 +24,7 @@ export class StartScreenComponent implements OnInit {
       .collection('games')
       .add(game.toJson())
       .then((gameInfo: any) => {
-        console.log(gameInfo);
         this.router.navigateByUrl('game/' + gameInfo.id);
       });
-    console.log(game);
   }
 }
