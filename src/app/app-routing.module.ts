@@ -8,9 +8,9 @@ const routes: Routes = [
   { path: 'game/:id', component: GameComponent }
 
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
