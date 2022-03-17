@@ -1,0 +1,42 @@
+.player {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.582);
+    padding: 5px 10px;
+    width: 50px;
+    border-bottom-left-radius: 999px;
+    border-bottom-right-radius: 999px;
+
+    &:hover {
+        background-color: rgba(251, 255, 0, 0.623) !important;
+        filter: brightness(1.15);
+    }
+
+    img {
+        width: 50px;
+        border-radius: 100%;
+        background-color: white;
+    }
+
+    span {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 10px 0 10px 0;
+        text-align: center;
+    }
+}
+
+.player-active {
+    background-color: rgba(104, 58, 183, 0.89) !important;
+
+    &:hover {
+        background-color: rgba(251, 255, 0, 0.623) !important;
+        filter: brightness(1.15);
+    }
+}
