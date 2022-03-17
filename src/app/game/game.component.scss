@@ -14,6 +14,10 @@
     img {
         position: absolute;
         width: 120px;
+
+        @media (max-width: 720px) {
+            width: 90px;
+        }
     }
 }
 
@@ -29,12 +33,29 @@
 .pick-card {
     transition: transform 225ms ease-in-out;
     animation: pick-card-animation 1s linear both;
+
+    @media (max-width: 720px) {
+        animation: pick-card-animation-mobile 1s linear both;
+    }
 }
 
 .played-card {
     right: 25px;
     transform: scale(1) translateX(150px) translateY(-200px) rotate(-30deg);
+    
+    @media (max-width: 720px) {
+        transform: scale(1) translateX(90px) translateY(-170px) rotate(-30deg);
+    }
+}
 
+.scroll-container {
+    overflow-x: auto;
+    display: flex;
+    position: absolute;
+    padding-bottom: 8px;
+    left: 0;
+    top: 0;
+    right: 0;
 }
 
 @keyframes pick-card-animation {
@@ -55,6 +76,24 @@
     }
 }
 
+@keyframes pick-card-animation-mobile {
+    0% {
+        transform: scale(1.5);
+    }
+
+    30% {
+        transform: scale(1.7);
+    }
+
+    50% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1) translateX(90px) translateY(-170px) rotate(-30deg);
+    }
+}
+
 .player-position {
     position: absolute;
     right: 0;
@@ -65,4 +104,20 @@
     position: absolute;
     right: 20px;
     bottom: 20px;
+}
+
+.player-mobile {
+    margin-right: 8px;
+}
+
+app-player, app-player-mobile {
+    cursor: pointer;
+}
+
+.preload-image {
+    opacity: 0;
+    position: absolute;
+    z-index: -9999;
+    width: 0px;
+    height: 0px;
 }
